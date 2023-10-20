@@ -265,7 +265,12 @@ searchBtn.addEventListener("click", () => {
 
 function toggleH2Visibility(flagImage) {
   const h2 = flagImage.nextElementSibling;
-  h2.style.display = h2.style.display === "none" ? "block" : "none";
+  const style = getComputedStyle(h2);
+  if (style.display === "none")
+    h2.style.display = "block";
+  else
+    h2.style.display = "none";
+
 }
 
 function generateRan(max) {
